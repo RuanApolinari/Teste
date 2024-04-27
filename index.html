@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido de Desculpas</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        color: #333;
+        margin-top: 0;
+        font-size: 24px;
+        animation: bounceInDown 0.5s ease;
+    }
+
+    @keyframes bounceInDown {
+        0% {
+            transform: translateY(-500px);
+            opacity: 0;
+        }
+        60% {
+            transform: translateY(30px);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.6;
+        animation: slideInLeft 0.5s ease;
+    }
+
+    @keyframes slideInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    img {
+        max-width: 150px;
+        height: 150px;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+        animation: zoomIn 0.5s ease;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        animation: slideInUp 0.5s ease;
+    }
+
+    @keyframes slideInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+        animation: slideInRight 0.5s ease;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    @keyframes slideInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .mensagem {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+        animation: slideInUp 0.5s ease;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://via.placeholder.com/300" id="emotionImage" alt="Desculpe">
+    <h1>Pedido de Desculpas</h1>
+    <p>Caro [Nome],</p>
+    <p>Eu queria me desculpar por [razão da desculpa]. Foi um erro da minha parte e eu reconheço isso. Por favor, aceite minhas sinceras desculpas.</p>
+    <p>Estou disposto a fazer o que for necessário para consertar as coisas e garantir que isso não aconteça novamente no futuro.</p>
+    <p>Posso contar com o seu perdão?</p>
+    <div class="button-container">
+        <button class="button" onclick="mostrarEmocao('feliz')">Sim, pode contar com o meu perdão</button>
+        <button class="button" onclick="mostrarEmocao('triste')">Não, estou magoado(a)</button>
+    </div>
+    <p class="mensagem" id="mensagem"></p>
+    <p>Atenciosamente,<br>[Seu Nome]</p>
+</div>
+
+<script>
+    function mostrarEmocao(emocao) {
+        var imagem = document.getElementById('emotionImage');
+        var mensagem = document.getElementById('mensagem');
+        if (emocao === 'feliz') {
+            imagem.src = 'https://i.imgflip.com/cnudu.jpg';
+            imagem.alt = 'Feliz';
+            mensagem.textContent = 'OBRIGADOOOOOOOOOOO, EU TE AMO MUITOOOOOOOO';
+            mensagem.style.color = '#007bff';
+        } else if (emocao === 'triste') {
+            imagem.src = 'https://i.pinimg.com/originals/3a/73/49/3a73496b5da93ff9c960f3affa440a92.jpg';
+            imagem.alt = 'Triste';
+            mensagem.textContent = 'NÃOOOOOOOOOO, ACEITA MINHAS DESCULPAS';
+            mensagem.style.color = '#FF0000';
+        }
+    }
+</script>
+
+</body>
+</html>
